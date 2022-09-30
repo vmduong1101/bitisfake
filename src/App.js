@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react'
 import './App.css';
+import { loadAnimation } from "lottie-web";
+import { defineLordIconElement } from "lord-icon-element";
+import Header from './Common/Header';
+import Footer from './Common/Footer';
+import { products } from './Products';
+import Animated from './Common/Animated';
+import Scroll from './Common/Scroll';
+
+defineLordIconElement(loadAnimation);
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App font-body min-h-screen">
+      <Header products={products} />
+      <Animated />
+      <Footer />
+      <Scroll />
     </div>
   );
 }
